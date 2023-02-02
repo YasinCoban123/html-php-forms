@@ -11,7 +11,7 @@
 <nav>
     <ul>
     <li><a href="index.html">home</a></li>
-    <li><a href="subpageyasin.html">login</a></li>
+    <li><a href="subpageyasin.php">login</a></li>
   </ul>
 </nav>
 <form action="action_page.php" method="POST">
