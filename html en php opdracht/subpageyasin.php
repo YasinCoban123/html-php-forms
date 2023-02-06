@@ -16,9 +16,9 @@
 </nav>
 <form action="action_page.php" method="POST">
   <label for="username">Username:</label>
-  <input type="text" id="username" value="yasin" name="username"><br><br>
+  <input type="text" id="username" value="" name="username"><br><br>
   <label for="password">Password:</label>
-  <input type="password" id="password" value="coban" name="password"><br><br>
+  <input type="password" id="password" value="" name="password"><br><br>
   <input type="submit" value="Submit">
 </form>
 </body>

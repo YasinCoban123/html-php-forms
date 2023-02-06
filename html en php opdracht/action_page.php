@@ -1,4 +1,6 @@
 <?php
+$a[0] = "yasin";
+$a[1] = "mo";
  echo date("") . "<br>";
  echo date("l jS \of F Y h:i:s A") . "<br>";
 echo "<p>hello world</p> <br>";
