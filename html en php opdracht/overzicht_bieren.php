@@ -1,7 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
-<title>cijfersysteem tabel</title>
+<title>bieren</title>
 </head>
 <body>
 <nav>
