@@ -8,12 +8,9 @@
   <title>Document</title>
 </head>
 <body>
-<nav>
-    <ul>
-    <li><a href="index.html">home</a></li>
-    <li><a href="subpageyasin.php">login</a></li>
-  </ul>
-</nav>
+<?php
+include 'navbar.php';
+ ?>
 <form action="action_page.php" method="POST">
   <label for="username">Username:</label>
   <input type="text" id="username" value="" name="username"><br><br>
