@@ -7,7 +7,7 @@
         include 'navbar.php';
         include 'functions.php';
 // connect database bieren
-        $conn = OpenDb();
+        OpenDb();
 // print bieren
         OvzBieren();
         
