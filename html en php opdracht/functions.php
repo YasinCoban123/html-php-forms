@@ -11,16 +11,19 @@ function OpenDb() {
   }
 }
 
+function GetData($conn, $table){
+    $query = $conn->prepare("SELECT * FROM $table");
+    $query->execute();
+    $result = $query->fetchALL(PDO::FETCH_ASSOC);
+    return $result;}
+
 function OvzBieren() {
     $conn = OpenDb();
     echo "<table border='1'>";
     echo "<tr><th>id</th><th>bieren</th><th>Alcoholpercentage</th></tr>";
   
     try {
-        $stmt = $conn->prepare("SELECT * FROM bier"); 
-        $stmt->execute();
-  
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+       $rows = GetData($conn, "bier");
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row["biercode"] . "</td>";
