@@ -11,6 +11,7 @@
 // print bieren
         OvzBieren();
         
+        OvzBrouwers();
         ?>
     </body>
 </html>
