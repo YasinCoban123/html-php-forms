@@ -1,7 +1,10 @@
 
 <html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
 <body>
-<nav>
+<nav class="nav">
     <ul>
       <li><a href="index.php">home</a></li>
       <li><a href="subpageyasin.php">login</a></li>
