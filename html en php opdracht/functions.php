@@ -39,3 +39,32 @@ function OvzBieren() {
     $conn = null;
   }
   
+
+
+  function GetData1($conn, $table){
+    $query = $conn->prepare("SELECT * FROM $table");
+    $query->execute();
+    $result = $query->fetchALL(PDO::FETCH_ASSOC);
+    return $result;}
+
+function OvzBrouwers() {
+    $conn = OpenDb();
+    echo "<table border='1'>";
+    echo "<tr><th>brouwcode/id</th><th>naam</th><th>land</th></tr>";
+  
+    try {
+       $rows = GetData1($conn, "brouwer");
+        foreach ($rows as $row) {
+            echo "<tr>";
+            echo "<td>" . $row["brouwcode"] . "</td>";
+            echo "<td>" . $row["naam"] . "</td>";
+            echo "<td>" . $row["land"] . "</td>";
+            echo "</tr>";
+        }
+  
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    echo "</table>";
+    $conn = null;
+  }
