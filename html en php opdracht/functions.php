@@ -11,41 +11,35 @@ function OpenDb() {
   }
 }
 
-function GetData($conn, $table){
+function GetData($table){
+    $conn = OpenDb();
     $query = $conn->prepare("SELECT * FROM $table");
     $query->execute();
     $result = $query->fetchALL(PDO::FETCH_ASSOC);
     return $result;}
 
-function OvzBieren() {
-    $conn = OpenDb();
-    echo "<table border='1'>";
-    echo "<tr><th>id</th><th>bieren</th><th>Alcoholpercentage</th></tr>";
-  
-    try {
-       $rows = GetData($conn, "bier");
-        foreach ($rows as $row) {
+    
+    function OvzBieren() {
+       
+        try {
+           $result = GetData( "bier");
+           PrintTable($result);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    
+        $conn = null;
+    }
+    function PrintTable($result) {
+        echo "<table border='1px'>";
+        foreach ($result as $row) {
             echo "<tr>";
-            echo "<td>" . $row["biercode"] . "</td>";
-            echo "<td>" . $row["naam"] . "</td>";
-            echo "<td>" . $row["alcohol"] . "</td>";
+            foreach($row as $value){
+                echo "<td>$value</td>";
+            }
             echo "</tr>";
         }
-  
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-    echo "</table>";
-    $conn = null;
-  }
-  
-
-
-  function GetData1($conn, $table){
-    $query = $conn->prepare("SELECT * FROM $table");
-    $query->execute();
-    $result = $query->fetchALL(PDO::FETCH_ASSOC);
-    return $result;}
+        echo "</table>";}
 
 function OvzBrouwers() {
     $conn = OpenDb();
@@ -53,7 +47,7 @@ function OvzBrouwers() {
     echo "<tr><th>brouwcode/id</th><th>naam</th><th>land</th></tr>";
   
     try {
-       $rows = GetData1($conn, "brouwer");
+       $rows = GetData($conn, "brouwer");
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row["brouwcode"] . "</td>";

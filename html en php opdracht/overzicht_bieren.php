@@ -10,8 +10,6 @@
         OpenDb();
 // print bieren
         OvzBieren();
-        
-        OvzBrouwers();
         ?>
     </body>
 </html>
