@@ -119,6 +119,7 @@ function OvzBieren1() {
         $conn = null;
     }
     function PrintTable1($result) {
+        echo "<a href=''>Toevoegen nieuwe bier.</a>";
         echo "<table border='1px'>";
         echo "<thead><tr><th>Biercode</th><th>Naam</th><th>Soort</th><th>Stijl</th><th>Alcohol</th><th>Brouwcode</th><th>Wijzigen</th><th>Verwijderen</th></tr></thead>";
         echo "<tbody>";
